@@ -16,7 +16,7 @@ const ErrorPage = () => {
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
-      <Link to="/" className="text-purple-700 hover:purple-900">
+      <Link to="/Homy" className="text-purple-700 hover:purple-900">
         Revenir en lieu sûr
       </Link>
     </div>

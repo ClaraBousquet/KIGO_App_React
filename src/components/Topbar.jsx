@@ -7,6 +7,9 @@ import devIcon from "../assets/dev-icon.png";
 
 const Topbar = () => {
   return (
+  <div className="flex flex-col">
+    <img className=" image-size " src="kigo.png" alt="" />
+
     <div className="h-20 flex justify-between items-center bg-black m-5">
       {[
         { icon: uxuiIcon, text: "UX/UI" },
@@ -27,6 +30,7 @@ const Topbar = () => {
         </div>
       ))}
     </div>
+  </div>
   );
 };
 

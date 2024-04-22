@@ -29,7 +29,7 @@ export const dataUserNav = [
 ];
 
 //on récupère le chemain de notre logo
-export const imgLogo = `kigo.jpg`;
+export const imgLogo = `kigo.png`;
 
 //on définit du style pour les icones
 export const styleIcon = { width: "25px", height: "25px" };

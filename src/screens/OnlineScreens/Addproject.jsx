@@ -1,9 +1,7 @@
 import React from "react";
 import CustomInput from "../../components/CustomInput";
-import ButtonProject from "../../components/Loader/ButtonLoader";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { apiUrl } from "../../constants/apiConstant";
 import { TailSpin } from "react-loader-spinner";
 import loginIcon from "../../assets/login-icon.svg";
 
@@ -16,32 +14,39 @@ const Addproject = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setIsLoading(true);
-    const postData = {
-      "@context": "https://schema.org",
-      "@type": "Project",
-      title,
-      description: description,
-      dateCreated: dateCreation,
-    };
+  const userId = localStorage.getItem("userId");
 
-    axios
-      .post(`${apiUrl}/posts`, postData, {
+const handleSubmit = (event) => {
+  event.preventDefault();
+  setIsLoading(true);
+  axios
+    .post(
+      `http://api-symfony-7-spotify.lndo.site/api/posts`,
+      {
+        title,
+        description, // Ajoute la valeur du champ description
+        dateCreation, // Ajoute la valeur du champ dateCreation
+        user: `/api/users/${userId}`,
+      },
+      {
         headers: {
           "Content-Type": "application/ld+json",
         },
-      })
-      .then((response) => {
-        setIsLoading(false);
-        navigate("/");
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        console.error(`Erreur lors de l'ajout du projet: ${error}`);
-      });
-  };
+      }
+    )
+    .then((response) => {
+      setIsLoading(false);
+      console.log(`Projet créé avec succès: ${response.data.title}`);
+      navigate("/");
+    })
+    .catch((error) => {
+      setIsLoading(false);
+      console.log(
+        `Erreur lors de la création du projet: `,
+        error.response?.data || error.message
+      );
+    });
+};
 
   return (
     <div>

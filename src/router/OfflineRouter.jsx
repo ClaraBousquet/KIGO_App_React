@@ -3,8 +3,7 @@ import ErrorPage from "../screens/ErrorScreens/ErrorPage";
 import HomeOffline from "../screens/OfflineScreens/HomeOffline";
 import Login from "../screens/OfflineScreens/Login";
 import Register from "../screens/OfflineScreens/Register";
-import Home from "../screens/OnlineScreens/Home";
-import Addproject from "../screens/OnlineScreens/Addproject";
+import Homy from "../screens/OnlineScreens/Homy";
 
 
 const OfflineRouter = createBrowserRouter([
@@ -15,7 +14,7 @@ const OfflineRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Login />,
       },
       {
         path: "/register",
@@ -26,9 +25,10 @@ const OfflineRouter = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/addproject",
-        element: <Addproject />,
+        path: "/homy",
+        element: <Homy />,
       },
+    
     ],
   },
 ]);

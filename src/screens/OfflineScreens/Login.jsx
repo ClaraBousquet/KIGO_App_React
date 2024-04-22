@@ -6,6 +6,7 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import ButtonLoader from "../../components/Loader/ButtonLoader";
 import { apiRoot } from "../../constants/apiConstant";
 import loginIcon from '../../assets/login-icon.svg';  
+import Homy from "../OnlineScreens/Homy";
 
 
 const Login = () => {
@@ -22,10 +23,13 @@ const Login = () => {
     event.preventDefault(); //empêche le fonctionnement par défaut du formulaire
     setIsLoading(true);
     axios
-      .project(`${apiRoot}/login`, {
-        email,
-        password,
-      })
+      .post(
+        `http://api-symfony-7-spotify.lndo.site/login`,
+        {
+          email,
+          password,
+        }
+      )
       .then((response) => {
         if (response.data.email) {
           const user = {
@@ -37,7 +41,7 @@ const Login = () => {
           try {
             signIn(user);
             setIsLoading(false);
-            navigate("/");
+            navigate("/Homy");
           } catch (error) {
             setIsLoading(false);
             console.log(`Erreur lors de la création de la session: ${error}`);
@@ -84,9 +88,9 @@ const Login = () => {
           </Link>
         </p>
         <div className="flex items-center justify-center pt-5">
-          {isLoading ? (
+          {isLoading ? 
             <ButtonLoader />
-          ) : (
+           : (
             <button
               type="submit"
               className="bg-black text-white font-bold py-2 px-4 rounded flex align-items-center justify-center"

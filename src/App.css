@@ -18,7 +18,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-green_top;
+  @apply bg-black;
   border-radius: 5px;
 }
 
@@ -44,3 +44,10 @@ html{
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.image-size {
+  width: 70%;
+  height: 70%;
+}
+
+

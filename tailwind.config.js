@@ -15,6 +15,8 @@ export default {
         green_top: "rgba(26, 173, 78, 1)",
         pink: "background: linear-gradient(180deg, rgba(143, 0, 255, 0.04) 0%, rgba(191, 0, 138, 0.2) 100%)",
         pink_01: "#bf008a",
+        purple1: "#8f00ff",
+        pink1: "#bf008a",
       },
       animation: {
         slideup: "slideup 1s ease-in-out",
