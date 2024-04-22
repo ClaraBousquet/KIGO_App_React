@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PiUserCircleFill } from "react-icons/pi";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../../redux/user/userSlice";
+import { useDispatch } from "react-redux";
+import { USER_INFOS } from "../../../constants/appConstant";
+import { selectUserData } from "../../../redux/user/userSelector";
+import { fetchUser } from "../../../redux/user/userSlice";
 
 const MyAccount = () => {
-  const user = useSelector(selectUser);
-  console.log(user); // Ajout pour débogage
+  const dispatch = useDispatch();
+
+  const userId = JSON.parse(localStorage.getItem(USER_INFOS)).userId;
+
+  useEffect(() => {
+    dispatch(fetchUser(userId));
+
+  })
+
+const {user, isLoading} = useSelector(selectUserData)
+
   return (
     <div className="flex flex-col items-center">
       <img className=" image-size " src="kigo.png" alt="" />

@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom"; 
 import { useDispatch } from "react-redux";
+import { IoAddCircleSharp } from "react-icons/io5";
+
 
 const ProjectCard = ({ data }) => {
   const img = `src/assets/projects.jpg`;
   const dispatch = useDispatch();
 
   const postTitle = data?.title;
-
   return (
     <div className="flex flex-col p-4 shadow-md w-64 h-64 bg-gradient-to-b from-purple1 to-pink1 hover:bg-purple-800 transition-all ease-out duration-800 animate-slideup rounded-md cursor-pointer group">
       <div className="relative w-full flex flex-col overflow-hidden">
@@ -28,8 +29,9 @@ const ProjectCard = ({ data }) => {
               <img
                 src="src/assets/rejoindre.png"
                 alt="Rejoindre"
-                className="w-20 h-10 shadow-sm "
+                className="w-20 h-10 shadow-sm border-2, border-white rounded-full z-10"
               />
+            
             </button>
           </Link>
         </div>

@@ -23,7 +23,7 @@ const Homy = () => {
   const posts = datapost["hydra:member"];
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col justify-center items-center">
       <Topbar />
 
       <div className="flex justify-center mt-20">

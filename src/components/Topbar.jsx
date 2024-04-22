@@ -7,7 +7,7 @@ import devIcon from "../assets/dev-icon.png";
 
 const Topbar = () => {
   return (
-  <div className="flex flex-col">
+  <div className="flex flex-col justify-center items-center">
     <img className=" image-size " src="kigo.png" alt="" />
 
     <div className="h-20 flex justify-between items-center bg-black m-5">

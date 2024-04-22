@@ -1,12 +1,9 @@
 import { createSelector } from "@reduxjs/toolkit";
 
-const projectSelector = (state) => state.project;
+const projectSelector = (state) => state.project.projects;
 const projectLoadingSelector = (state) => state.project.isLoading;
 
-export const selectprojects = createSelector([projectSelector], (project) =>
-  project ? project.projects : []
-);
-export const selectIsLoading = createSelector(
-    [projectLoadingSelector],
-    (isLoading) => isLoading
+export const selectProjectData = createSelector(
+  [projectSelector, projectLoadingSelector],
+  (project, isLoading) => ({ project, isLoading })
 )
