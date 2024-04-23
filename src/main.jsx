@@ -18,5 +18,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </Provider>
 
     </AuthContextProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

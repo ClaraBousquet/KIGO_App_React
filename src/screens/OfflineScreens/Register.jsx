@@ -6,6 +6,7 @@ import { apiRoot } from "../../constants/apiConstant";
 import { useAuthContext } from "../../contexts/AuthContext";
 import ButtonLoader from "../../components/Loader/ButtonLoader";
 import loginIcon from '../../assets/login-icon.svg'
+// import CustomList from "../../components/CustomList";
 
 const Register = () => {
   const [nickname, setNickname] = useState("");
@@ -25,7 +26,7 @@ const Register = () => {
 
   useEffect(() => {
     fetchFiliereOptions();
-    fetchSkillsOptions();
+     fetchSkillsOptions();
   }, []);
 
   // Fonction pour gérer le changement de la filière sélectionnée
@@ -46,58 +47,70 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setIsLoading(true);
-    axios
-      .post(`http://api-symfony-7-spotify.lndo.site/register`, {
-        nickname,
-        email,
-        password,
-        filiere,
-        skills,
-      })
-      .then((response) => {
-        if (response.data.email) {
-          const user = {
-            userId: response.data.id,
-            nickname: response.data.nickname,
-            email: response.data.email,
-            filiere: response.data.filiere,
-            skills: response.data.skills,
-          };
+    console.log("nickname : ", nickname);
+    console.log("email : ", email);
+    console.log("filiere : ", filiere);
+    console.log("skills : ", skills);
+    console.log({
+      nickname,
+      email,
+      password,
+      filiere: `/api/filieres/${filiere}`,
+      skills,
+    });
+      setIsLoading(true);
+      axios
+        .post(`http://api-symfony-7-spotify.lndo.site/register`, {
+          nickname,
+          email,
+          password,
+          filiere:`/api/filieres/${filiere}`,
 
-          try {
-            signIn(user);
+          skills,
+        })
+        .then((response) => {
+          if (response.data.email) {
+            const user = {
+              userId: response.data.id,
+              nickname: response.data.nickname,
+              email: response.data.email,
+              filiere: response.data.filiere,
+              skills: response.data.skills,
+            };
+
+            try {
+              signIn(user);
+              setIsLoading(false);
+              navigate("/homy");
+            } catch (error) {
+              setIsLoading(false);
+              console.log(`Erreur lors de la création de la session: ${error}`);
+            }
+          } else {
             setIsLoading(false);
-            navigate("/homy");
-          } catch (error) {
-            setIsLoading(false);
-            console.log(`Erreur lors de la création de la session: ${error}`);
+            console.log(`Erreur lors de la réponse serveur: ${response}`);
           }
-        } else {
+        })
+        .catch((error) => {
           setIsLoading(false);
-          console.log(`Erreur lors de la réponse serveur: ${response}`);
-        }
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        console.log(`Erreur lors de l'enregistrement de l'user: `, error);
-      });
+          console.log(`Erreur lors de l'enregistrement de l'user: `, error);
+        });
   };
 
-  // Fonction pour récupérer les options de filière depuis l'API
+  //Fonction pour récupérer les options de filière depuis l'API
   const fetchFiliereOptions = () => {
-    // Effectuer une requête à l'API pour récupérer les filières
+   // Effectuer une requête à l'API pour récupérer les filières
     fetch("http://api-symfony-7-spotify.lndo.site/api/filieres")
       .then((response) => response.json())
       .then((data) => {
-        // Vérifie que data est un objet JSON avec la propriété hydra:member
+        //Vérifie que data est un objet JSON avec la propriété hydra:member
         if (data && data["hydra:member"]) {
-          // Mapper les filières pour obtenir un tableau d'objets avec les propriétés id et label
+        //  Mapper les filières pour obtenir un tableau d'objets avec les propriétés id et label
           const filieres = data["hydra:member"].map((filiere) => ({
             id: filiere.id,
             label: filiere.label,
           }));
-          // Mettre à jour les options de filière dans le state
+          //Mettre à jour les options de filière dans le state
           setFiliereOptions(filieres);
         } else {
           console.error(
@@ -136,6 +149,8 @@ const Register = () => {
       );
   };
 
+
+
   return (
     <div className="flex flex-1 flex-col h-screen justify-start items-center bg-black">
       <h2 className="text-white font-bold text-xl py-5">Enregistrez vous!</h2>
@@ -143,7 +158,7 @@ const Register = () => {
         {/* input pour nickname */}
         <CustomInput
           state={nickname}
-          label="Mon pseudo"
+          label=" Pseudo"
           type="text"
           callable={(event) => setNickname(event.target.value)}
         />
@@ -155,6 +170,11 @@ const Register = () => {
           >
             Ma filière :
           </label>
+          {/* <CustomList
+            label="Ma section"
+            callable={(event) => setFiliere(event.target.value)}
+          /> */}
+
           <select
             className="form-input mt-1 block w-full px-3 py-2 bg-white border border-purple-300 rounded-full shadow-md placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
             id="filiereSelect"
@@ -171,20 +191,18 @@ const Register = () => {
           </select>
         </div>
 
-
-
         <div className="mb-4 mt-4 ml-4 mr-4">
           <label
             htmlFor="skillsSelect"
             className="block text-purple-700 font-bold mb-2 "
           >
-            Mes compétences :
+            Compétences :
           </label>
           <select
             className="form-input mt-1 block w-full px-3 py-2 bg-white border border-purple-300 rounded-full shadow-md placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
             id="skillsSelect"
             value={skills}
-            onChange={handleChangeSkills} 
+            onChange={handleChangeSkills}
           >
             <option value="">Sélectionnez une compétence...</option>
             {/* Mapper sur les options de filière pour les afficher dans la liste déroulante */}
@@ -199,14 +217,14 @@ const Register = () => {
         {/* input pour email */}
         <CustomInput
           state={email}
-          label="Mon email"
+          label=" Email"
           type="email"
           callable={(event) => setEmail(event.target.value)}
         />
         {/* input pour password */}
         <CustomInput
           state={password}
-          label="Mon mot de passe"
+          label=" Mot de passe"
           type="password"
           callable={(event) => setPassword(event.target.value)}
         />

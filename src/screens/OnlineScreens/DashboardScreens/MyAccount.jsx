@@ -25,12 +25,21 @@ const {user, isLoading} = useSelector(selectUserData)
         className="w-24 h-24 flex mt-7 items-center justify-center"
         style={{ color: `#8f00ff` }}
       />
-      <h1 className="text-3xl font-bold" style={{ color: `#8f00ff` }}>
+      <h1 className="text-3xl font-bold mb-20" style={{ color: `#8f00ff` }}>
         Mon compte
       </h1>
-      <h1 className="text-3xl font-bold" style={{ color: `#8f00ff` }}>
-        {user ? `${user.email} ${user.nickname}` : "Loading..."}
-      </h1>
+      <table className="table-auto " style={{ color: `#8f00ff` }}>
+        <tbody>
+          <tr>
+            <th>Email :</th>
+            <td>{user ? user.email : "Chargement..."}</td>
+          </tr>
+          <tr>
+            <th>Nom d'utilisateur : </th>
+            <td>{user ? user.nickname : "Chargement..."}</td>
+          </tr>
+        </tbody>
+      </table>{" "}
     </div>
   );
 };

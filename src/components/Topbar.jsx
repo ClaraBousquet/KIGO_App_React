@@ -4,13 +4,14 @@ import audioIcon from "../assets/audio-icon.png";
 import animIcon from "../assets/anim-icon.png";
 import designIcon from "../assets/design-icon.png";
 import devIcon from "../assets/dev-icon.png";
+import Footerbar from "./Footerbar";
 
 const Topbar = () => {
   return (
   <div className="flex flex-col justify-center items-center">
     <img className=" image-size " src="kigo.png" alt="" />
 
-    <div className="h-20 flex justify-between items-center bg-black m-5">
+    <div className="h-20  flex justify-between items-center bg-black m-5">
       {[
         { icon: uxuiIcon, text: "UX/UI" },
         { icon: audioIcon, text: "Audio" },
@@ -30,6 +31,7 @@ const Topbar = () => {
         </div>
       ))}
     </div>
+    <Footerbar/>
   </div>
   );
 };
