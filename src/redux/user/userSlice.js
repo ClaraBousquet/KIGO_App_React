@@ -15,12 +15,15 @@ const userSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
     },
-    setLoading:(state, action)=> {
+    setLoading: (state, action) => {
       state.isLoading = action.payload;
+    },
+    updateUserSuccess: (state, action) => {
+      state.user = action.payload;
     }
-}});
+  },
+});
 
-export const { setUser, setLoading } = userSlice.actions;
 
 // Méthode pour récupérer les données du user
 
@@ -37,7 +40,33 @@ export const fetchUser = (id) => async (dispatch) => {
     console.log(`Erreur sur fetchUsers ${error}`);
     dispatch(setLoading(false));
   }
-}
+};
+
+// Méthode pour mettre à jour les données du user
+export const updateUserData = (userData, userId) => async (dispatch) => {
+  try {
+    dispatch(setLoading(true));
+    const response = await axios.patch(
+      `${apiUrl}/users/${userId}`, 
+      JSON.stringify(userData), 
+      {
+        headers: {
+          "Content-Type": "application/merge-patch+json", 
+        },
+      }
+    );
+    dispatch(updateUserSuccess(response.data));
+    dispatch(setLoading(false));
+  } catch (error) {
+    console.error(`Erreur lors de la mise à jour de l'utilisateur: ${error}`);
+    dispatch(setLoading(false));
+  }
+};
+
+
+export const { setUser, setLoading, updateUserSuccess } = userSlice.actions;
+export const selectUserData = (state) =>
+  state.user.user || { user: null, isLoading: false };
 
 
 export default userSlice.reducer;

@@ -5,13 +5,24 @@ import {  FaRegUser } from "react-icons/fa";
 import { TiMessages } from "react-icons/ti";
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { useAuthContext } from "../../contexts/AuthContext";
-
+import { useNavigate } from "react-router-dom";
 
 
 const img = `src/assets/projects.jpg`;
 
 const Profile = () => {
-const { signOut } = useAuthContext(); 
+
+const { signOut } = useAuthContext();
+const navigate = useNavigate();
+
+const handleSignOut = async () => {
+  try {
+    await signOut();
+    navigate("/login"); // Redirection après la déconnexion
+  } catch (error) {
+    console.error("Erreur lors de la déconnexion", error);
+  }
+};
 
   return (
     <div className="flex flex-col justify-center items-center  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -69,8 +80,13 @@ const { signOut } = useAuthContext();
               <p className="text-xl font-bold m-4">
                 <h1>Se déconnecter</h1>
               </p>
-               <Link to="/login" onClick={signOut} className="flex items-center justify-center w-full"></Link> 
-              {/* Utilise un Link pour lier chaque post à sa page détail */}
+              <button
+                onClick={handleSignOut}
+                className="flex items-center justify-center w-full"
+              >
+                <RiLogoutBoxFill className="w-20 h-20 text-center" />
+              </button>
+
               <Link
                 to="/messages"
                 className="flex items-center justify-center w-full"

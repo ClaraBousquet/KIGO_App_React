@@ -6,6 +6,8 @@ import { MdOutlineAddCircle } from "react-icons/md";
 import footbar from "../assets/footbar.svg";
 import userlogo from "../assets/user-logo.png";
 import { Link } from "react-router-dom";
+import { TfiDashboard } from "react-icons/tfi";
+
 
 
 
@@ -20,14 +22,18 @@ const Footerbar = () => {
         backgroundPosition: "center center",
       }}
     >
-      <Link to="/"><img src={houseIcon} alt="Accueil" className="w-8 h-8" /></Link>
+      <Link to="/">
+        <img src={houseIcon} alt="Accueil" className="w-8 h-8" />
+      </Link>
       <img src={searchIcon} alt="Rechercher" className="w-8 h-8" />
       <Link to="/addproject">
         <MdOutlineAddCircle className="w-14 h-14 " style={{ color: "white" }} />
       </Link>
       <img src={messageIcon} alt="Messages" className="w-8 h-8" />
 
-      <Link to="/login"><img src={userlogo} alt="user" className="w-10 h-10" /></Link>
+      <Link to="/profile">
+        <TfiDashboard  className="w-10 h-10" />
+      </Link>
     </div>
   );
 };

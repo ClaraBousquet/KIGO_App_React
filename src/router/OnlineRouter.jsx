@@ -7,6 +7,11 @@ import Homy from "../screens/OnlineScreens/Homy";
 import Profile from "../screens/OnlineScreens/Profile";
 import MyProjects from "../screens/OnlineScreens/DashboardScreens/MyProjects";
 import MyAccount from "../screens/OnlineScreens/DashboardScreens/MyAccount";
+import Uxui from "../screens/OnlineScreens/topbar/Uxui";
+import Audio from "../screens/OnlineScreens/topbar/Audio";
+import Anim from "../screens/OnlineScreens/topbar/Anim";
+import Design from "../screens/OnlineScreens/topbar/Design";
+import Dev from "../screens/OnlineScreens/topbar/Dev";
 
 
 const OnlineRouter = createBrowserRouter([
@@ -42,7 +47,27 @@ const OnlineRouter = createBrowserRouter([
       {
         path: "myaccount",
         element: <MyAccount />,
-      }
+      },
+      {
+        path: "uxui",
+        element: <Uxui />,
+      },
+      {
+        path: "audio",
+        element: <Audio />,
+      },
+      {
+        path: "anim",
+        element: <Anim />,
+      },
+      {
+        path: "design",
+        element: <Design />,
+      },
+      {
+        path: "dev",
+        element: <Dev />,
+      },
     ],
   },
 ]);

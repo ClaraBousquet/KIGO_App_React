@@ -15,6 +15,7 @@ const Register = () => {
   const [filiereOptions, setFiliereOptions] = useState([]);
   const [skills, setSkills] = useState("");
   const [skillsOptions, setSkillsOptions] = useState([]);
+  const [biography, setBiography] = useState("");
 
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -64,6 +65,7 @@ const Register = () => {
           nickname,
           email,
           password,
+          biography,
           filiere:`/api/filieres/${filiere}`,
 
           skills,
@@ -74,6 +76,7 @@ const Register = () => {
               userId: response.data.id,
               nickname: response.data.nickname,
               email: response.data.email,
+              biography: response.data.biography,
               filiere: response.data.filiere,
               skills: response.data.skills,
             };
@@ -94,6 +97,11 @@ const Register = () => {
         .catch((error) => {
           setIsLoading(false);
           console.log(`Erreur lors de l'enregistrement de l'user: `, error);
+          if (error.response) {
+            console.error("Erreur data:", error.response.data);
+            console.error("Erreur status:", error.response.status);
+          }
+          
         });
   };
 
@@ -161,6 +169,13 @@ const Register = () => {
           label=" Pseudo"
           type="text"
           callable={(event) => setNickname(event.target.value)}
+        />
+
+        <CustomInput
+          state={biography}
+          label=" Biographie"
+          type="text"
+          callable={(event) => setBiography(event.target.value)}
         />
 
         <div className="mb-4 mt-4 ml-4 mr-4">

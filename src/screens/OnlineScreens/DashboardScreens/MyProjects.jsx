@@ -17,7 +17,7 @@ const MyProjects = () => {
   }, [dispatch]);
 
   const datapost = useSelector(selectpost);
-  const posts = datapost["hydra:member"] || []; // Assurez-vous que cela est correctement initialisé.
+  const posts = datapost["hydra:member"] || []; 
 
   return (
     <div className='flex flex-col justify-center items-center'>
@@ -34,12 +34,12 @@ const MyProjects = () => {
                 <Link to={`/post/${post.id}`}>
                   <p className="text-xl truncate font-bold m-4">{post.title}</p>
                   <img
-                    src={post.image || `src/assets/projects.jpg`} // Supposons que vous avez une propriété 'image' dans 'post'.
+                    src={post.image || `src/assets/projects.jpg`} 
                     alt="Post"
                     className="card-sh rounded-lg object-cover h-52 w-52"
                   />
                 </Link>
-                {/* Assurez-vous que les liens suivants ont les bonnes routes et les bonnes données à utiliser. */}
+               
                 <div className="absolute bottom-4 right-4">
                   <Link to={`/rejoindre/${post.id}`}>
                     {/* Contenu du lien ici */}
