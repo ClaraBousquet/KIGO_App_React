@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Footerbar from '../../../components/Footerbar';
 
 const uxui = () => {
   const img = `src/assets/projects.jpg`;
@@ -83,6 +84,7 @@ const uxui = () => {
           </div>
         </div>
       </div>
+      <Footerbar/>
     </div>
   );
     };

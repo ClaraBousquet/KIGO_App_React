@@ -14,7 +14,7 @@ import { TfiDashboard } from "react-icons/tfi";
 const Footerbar = () => {
   return (
     <div
-      className="fixed bottom-0 w-full flex items-center justify-evenly"
+      className="fixed bottom-0 w-full font-quatro-book flex items-center justify-evenly"
       style={{
         backgroundImage: `url(${footbar})`,
         backgroundSize: "cover",
@@ -32,7 +32,7 @@ const Footerbar = () => {
       <img src={messageIcon} alt="Messages" className="w-8 h-8" />
 
       <Link to="/profile">
-        <TfiDashboard  className="w-10 h-10" />
+        <TfiDashboard className="w-10 h-10" />
       </Link>
     </div>
   );

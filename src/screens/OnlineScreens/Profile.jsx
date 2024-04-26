@@ -34,7 +34,7 @@ const handleSignOut = async () => {
         <div className="flex flex-wrap sm:justify-start justify-center gap-8">
           <div className=" card flex flex-col p-4 shadow-md w-50 h-54 bg-gradient-to-b from-purple1 to-pink1 hover:bg-purple-800 transition-all ease-out duration-800 animate-slideup rounded-md cursor-pointer group">
             <div className="relative w-full flex flex-col overflow-hidden">
-              <p className="text-xl font-bold m-4">
+              <p className="text-xl font-bold m-4 font-quatro-book">
                 <h1>Mes projets</h1>
               </p>
               <Link
@@ -48,7 +48,7 @@ const handleSignOut = async () => {
 
           <div className=" card flex flex-col p-4 shadow-md w-50 h-54 bg-gradient-to-b from-purple1 to-pink1 hover:bg-purple-800 transition-all ease-out duration-800 animate-slideup rounded-md cursor-pointer group">
             <div className="relative w-full flex flex-col overflow-hidden">
-              <p className="text-xl font-bold m-4">
+              <p className="text-xl font-bold m-4 font-quatro-book">
                 <h1>Ma messagerie</h1>
               </p>
               {/* Utilise un Link pour lier chaque post à sa page détail */}
@@ -62,7 +62,7 @@ const handleSignOut = async () => {
 
           <div className=" card flex flex-col p-4 shadow-md w-50 h-54 bg-gradient-to-b from-purple1 to-pink1 hover:bg-purple-800 transition-all ease-out duration-800 animate-slideup rounded-md cursor-pointer group">
             <div className="relative w-full flex flex-col overflow-hidden">
-              <p className="text-xl font-bold m-4">
+              <p className="text-xl font-bold m-4 font-quatro-book">
                 <h1>Mon profil</h1>
               </p>
               {/* Utilise un Link pour lier chaque post à sa page détail */}
@@ -77,7 +77,7 @@ const handleSignOut = async () => {
 
           <div>
             <div className=" card relative w-full flex flex-col overflow-hidden">
-              <p className="text-xl font-bold m-4">
+              <p className="text-xl font-bold m-4 font-quatro-book">
                 <h1>Se déconnecter</h1>
               </p>
               <button

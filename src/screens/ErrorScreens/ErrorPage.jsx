@@ -10,7 +10,7 @@ const ErrorPage = () => {
     <div className="flex flex-col items-center justify-center h-screen bg-black text-white">
       <MdDangerous className="text-9xl text-purple-900 " />
       <h1 className="text-6xl font-bold text-fuchsia-600">Oops!</h1>
-      <p className="mt-5 mtext-3xl font-bold text-purple-900">
+      <p className="mt-5 mtext-3xl font-quatro-bookfont-bold text-purple-900">
         Désolée, une erreur s'est produite !
       </p>
       <p>

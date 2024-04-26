@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footerbar from "../../../components/Footerbar";
 
 const Design = () => {
   const img = `src/assets/projects.jpg`;
@@ -80,6 +81,7 @@ const Design = () => {
           </div>
         </div>
       </div>
+      <Footerbar />
     </div>
   );
 };

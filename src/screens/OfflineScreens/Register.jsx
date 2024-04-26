@@ -243,7 +243,7 @@ const Register = () => {
           type="password"
           callable={(event) => setPassword(event.target.value)}
         />
-        <p className="text-white">
+        <p className="text-white font-quatro-book">
           Vous avez déjà un compte?
           <Link to="/" className="text-white font-bold hover:text-green">
             {" "}

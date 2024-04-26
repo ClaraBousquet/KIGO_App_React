@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
 import loginIcon from "../../assets/login-icon.svg";
+import { Link } from "react-router-dom";
 
 const Addproject = () => {
   const [title, setTitle] = React.useState("");
@@ -49,7 +50,14 @@ const handleSubmit = (event) => {
 };
 
   return (
-    <div>
+    <div  className="flex flex-col justify-center items-center">
+      <Link to="/homy">
+        <img
+          src="src/assets/arrow.png"
+          alt="Post"
+          className="mb-7 mr-80 mt-20 "
+        />
+      </Link>
       <form onSubmit={handleSubmit}>
         <CustomInput
           label="Titre du projet"

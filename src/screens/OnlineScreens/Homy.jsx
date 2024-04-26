@@ -26,8 +26,8 @@ const Homy = () => {
     <div className="flex flex-col justify-center items-center">
       <Topbar />
 
-      <div className="flex justify-center mt-20">
-        <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+      <div className="flex justify-center mt-10">
+        <div className="flex flex-wrap sm:justify-start justify-center gap-8  font-quatro-book">
           {/* ici on map sur post pour afficher les différents post */}
           {posts?.map((post) => (
             <ProjectCard key={post["@id"]} data={post} />

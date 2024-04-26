@@ -20,9 +20,14 @@ const MyProjects = () => {
   const posts = datapost["hydra:member"] || []; 
 
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className="flex flex-col justify-center items-center">
       <Topbar />
-      <h1 style={{ color: `#8f00ff` }} className='text-3xl font-bold justify-center shadow-lg underline-1'>Mes projets</h1>
+      <h1
+        style={{ color: `#8f00ff` }}
+        className="text-3xl font-bold justify-center shadow-lg underline-1"
+      >
+        Mes projets
+      </h1>
       <div className="flex justify-center mt-20">
         <div className="flex flex-wrap sm:justify-start justify-center gap-8">
           {posts.map((post) => (
@@ -32,14 +37,16 @@ const MyProjects = () => {
             >
               <div className="relative w-full flex flex-col overflow-hidden">
                 <Link to={`/post/${post.id}`}>
-                  <p className="text-xl truncate font-bold m-4">{post.title}</p>
+                  <p className="text-xl truncate font-bold font-quatro-book m-4">
+                    {post.title}
+                  </p>
                   <img
-                    src={post.image || `src/assets/projects.jpg`} 
+                    src={post.image || `src/assets/projects.jpg`}
                     alt="Post"
                     className="card-sh rounded-lg object-cover h-52 w-52"
                   />
                 </Link>
-               
+
                 <div className="absolute bottom-4 right-4">
                   <Link to={`/rejoindre/${post.id}`}>
                     {/* Contenu du lien ici */}

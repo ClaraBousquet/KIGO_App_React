@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footerbar from "../../../components/Footerbar";
 
 
 
@@ -83,6 +84,7 @@ const Audio = () => {
           </div>
         </div>
       </div>
+      <Footerbar />
     </div>
   );
 };

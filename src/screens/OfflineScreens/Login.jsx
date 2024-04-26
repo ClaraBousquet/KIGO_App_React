@@ -77,7 +77,7 @@ const Login = () => {
           type="password"
           callable={(event) => setPassword(event.target.value)}
         />
-        <p className="text-purple-700">
+        <p className="text-purple-700 font-quatro-book">
           Vous n'avez pas de compte?
           <Link
             to="/register"
@@ -88,15 +88,14 @@ const Login = () => {
           </Link>
         </p>
         <div className="flex items-center justify-center pt-5">
-          {isLoading ? 
+          {isLoading ? (
             <ButtonLoader />
-           : (
+          ) : (
             <button
               type="submit"
-              className="bg-black text-white font-bold py-2 px-4 rounded flex align-items-center justify-center"
+              className="bg-black text-white font-bold py-2 px-4 rounded flex font-quatro-book align-items-center justify-center"
             >
               <img src={loginIcon} alt="Login" style={{ marginRight: "8px" }} />
-              
             </button>
           )}
         </div>

@@ -18,6 +18,11 @@ export default {
         purple1: "#8f00ff",
         pink1: "#bf008a",
       },
+      fontFamily: {
+        'quatro': ['Quattro-Medium', 'sans-serif'],
+        'quatro': ['Quattro-Book', 'sans-serif'],
+        'quatro-bold': ['Quattro-SemiBold', 'sans-serif'],
+      },
       animation: {
         slideup: "slideup 1s ease-in-out",
         slideup2: "slideup 500ms ease-in-out",

@@ -72,3 +72,32 @@ html{
 Link{
 transition: transform 0.2s ease-in-out;
 }
+
+
+
+/* fonts */
+
+@font-face{
+  font-family:'Quatro-Book';
+  src:url('./assets/fonts/Quatro-Book.woff2') format ('woff2');
+  font-weight:normal;
+  font-style:normal
+}
+
+@font-face{
+  font-family:'Quatro-Medium';
+  src:url('./assets/fonts/Quatro-Medium.woff2') format ('woff2');
+  font-weight:normal;
+  font-style:normal
+}
+
+@font-face{
+  font-family:'Quatro-SemiBold';
+  src:url('./assets/fonts/Quatro-SemiBold.woff2') format ('woff2');
+  font-weight:normal;
+  font-style:normal
+}
+
+p {
+  font-family: 'Quatro', sans-serif;
+}

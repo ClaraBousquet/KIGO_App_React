@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footerbar from "../../../components/Footerbar";
 
 
 const Anim = () => {
@@ -11,7 +12,7 @@ const Anim = () => {
       <div className="flex flex-col justify-center items-center">
         <p
           style={{ color: `#8f00ff` }}
-          className="text-xl truncate font-bold m-4 shadow-sm "
+          className="text-xl truncate font-bold m-4 font-quatro-book shadow-sm "
         >
           Animation 2D/3D
         </p>
@@ -24,8 +25,10 @@ const Anim = () => {
         <div className="flex flex-col p-4 mb-6 shadow-md w-64 h-64 bg-gradient-to-b from-purple1 to-pink1 hover:bg-purple-800 transition-all ease-out duration-800 animate-slideup rounded-md cursor-pointer group">
           <div className="relative w-full flex flex-col overflow-hidden">
             <div className="flex">
-              <p className="text-xl truncate font-bold m-4">Dessin animé</p>
-              <p className="bg-orange-500 text-white text-xs font-semibold mb-10 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
+              <p className="text-xl truncate font-quatro-book font-bold m-4">
+                Dessin animé
+              </p>
+              <p className="bg-orange-500 text-white font-quatro-book text-xs font-semibold mb-10 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
                 Anim
               </p>
             </div>
@@ -46,7 +49,7 @@ const Anim = () => {
               </button>
             </div>
 
-            <div className="group-hover:animate-slideup2 bg-black outline-none rounded-full group-hover:duration-75"></div>
+            <div className="group-hover:animate-slideup2 bg-black outline-none font-quatro-book rounded-full group-hover:duration-75"></div>
             <div className="mt-4 flex flex-col"></div>
           </div>
         </div>
@@ -58,7 +61,7 @@ const Anim = () => {
               <p className="bg-blue-300 text-white text-xs font-semibold mb-10 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
                 Audio
               </p>
-              <p className="bg-orange-500 text-white text-xs font-semibold mb-10 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
+              <p className="bg-orange-500 font-quatro-book text-white text-xs font-semibold mb-10 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 font-quatro-book inline-block">
                 Anim
               </p>
             </div>
@@ -84,6 +87,7 @@ const Anim = () => {
           </div>
         </div>
       </div>
+      <Footerbar />
     </div>
   );
 };

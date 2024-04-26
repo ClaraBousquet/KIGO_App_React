@@ -49,7 +49,9 @@ const MyAccount = () => {
 
       <div className="mb-4 mt-4 ml-4 mr-4">
         <label className="block text-purple-700 font-bold mb-2 "></label>
-        <p className="block text-purple-700 font-bold mb-2 ">Nickname</p>
+        <p className="block text-purple-700 font-quatro-book font-bold mb-2 ">
+          Nickname
+        </p>
         <input
           type={nickname}
           className="form-input mt-1 block w-full px-3 py-2 bg-white border border-purple-300 rounded-full shadow-md placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
@@ -62,7 +64,9 @@ const MyAccount = () => {
 
       <div className="mb-4 mt-4 ml-4 mr-4">
         <label className="block text-purple-700 font-bold mb-2 "></label>
-        <p className="block text-purple-700 font-bold mb-2 ">Email</p>
+        <p className="block text-purple-700 font-quatro-book font-bold mb-2 ">
+          Email
+        </p>
         <input
           type={email}
           className="form-input mt-1 block w-full px-3 py-2 bg-white border border-purple-300 rounded-full shadow-md placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
@@ -75,11 +79,13 @@ const MyAccount = () => {
 
       <div className="mb-4 mt-4 ml-4 mr-4">
         <label className="block text-purple-700 font-bold mb-2 "></label>
-        <p className="block text-purple-700 font-bold mb-2 ">Biographie</p>
+        <p className="block text-purple-700 font-quatro-book font-bold mb-2 ">
+          Biographie
+        </p>
         <input
           type={biography}
           className="form-input mt-1 block w-full px-3 py-2 bg-white border border-purple-300 rounded-full shadow-md placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
-          placeholder="Je sui étudiant en deuxième année audio visuel"
+          placeholder="Je suis étudiant en deuxième année audio visuel"
           style={{ color: "purple" }}
           value={biography}
           onChange={(e) => setBiography(e.target.value)}
