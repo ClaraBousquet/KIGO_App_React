@@ -11,7 +11,7 @@ const ProjectCard = ({ data }) => {
   return (
     <div className="flex flex-col p-4 shadow-md w-64 h-64 bg-gradient-to-b from-purple1 to-pink1 hover:bg-purple-800 transition-all ease-out duration-800 animate-slideup rounded-md cursor-pointer group">
       <div className="relative w-full flex flex-col overflow-hidden">
-        <Link to={`/post/${data.id}`}>
+        <Link to={`/post/details`}>
           <p className="text-xl truncate font-bold m-4">{postTitle}</p>
           <div className="flex">
             <p className="bg-indigo-600 text-white text-xs font-semibold mb-2 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">

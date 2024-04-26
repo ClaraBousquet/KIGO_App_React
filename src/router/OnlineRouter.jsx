@@ -12,6 +12,7 @@ import Audio from "../screens/OnlineScreens/topbar/Audio";
 import Anim from "../screens/OnlineScreens/topbar/Anim";
 import Design from "../screens/OnlineScreens/topbar/Design";
 import Dev from "../screens/OnlineScreens/topbar/Dev";
+import Details from "../screens/OnlineScreens/Details";
 
 
 const OnlineRouter = createBrowserRouter([
@@ -68,6 +69,10 @@ const OnlineRouter = createBrowserRouter([
         path: "dev",
         element: <Dev />,
       },
+{
+  path: "details/",
+  element: <Details />,
+}
     ],
   },
 ]);

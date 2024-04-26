@@ -16,7 +16,7 @@ const Design = () => {
         </p>
 
         <Link to="/homy">
-          <img src="src/assets/arrow.png" alt="Post" className="mb-7" />
+          <img src="src/assets/arrow.png" alt="Post" className="mb-7 mr-80" />
         </Link>
 
         <img className="mb-4" src="src/assets/design-icon.png" alt="" />
@@ -24,7 +24,7 @@ const Design = () => {
           <div className="relative w-full flex flex-col overflow-hidden">
             <div className="flex">
               <p className="text-xl truncate font-bold m-4">Design affiche</p>
-              <p className="bg-indigo-500 text-white text-xs font-semibold mb-2 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
+              <p className="bg-indigo-500 text-white text-xs font-semibold mb-10 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
                 Design
               </p>
             </div>
@@ -54,7 +54,7 @@ const Design = () => {
           <div className="relative w-full flex flex-col overflow-hidden">
             <div className="flex">
               <p className="text-xl truncate font-bold m-4">Court métrage</p>
-              <p className="bg-indigo-500 text-white text-xs font-semibold mb-2 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
+              <p className="bg-indigo-500 text-white text-xs font-semibold mb-10 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
                 Design
               </p>
             </div>

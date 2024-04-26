@@ -17,7 +17,7 @@ const Anim = () => {
         </p>
 
         <Link to="/homy">
-          <img src="src/assets/arrow.png" alt="Post" className="mb-7" />
+          <img src="src/assets/arrow.png" alt="Post" className="mb-7 mr-80" />
         </Link>
 
         <img className="mb-4" src="src/assets/anim-icon.png" alt="" />
@@ -25,7 +25,7 @@ const Anim = () => {
           <div className="relative w-full flex flex-col overflow-hidden">
             <div className="flex">
               <p className="text-xl truncate font-bold m-4">Dessin animé</p>
-              <p className="bg-orange-500 text-white text-xs font-semibold mb-2 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
+              <p className="bg-orange-500 text-white text-xs font-semibold mb-10 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
                 Anim
               </p>
             </div>
@@ -55,10 +55,10 @@ const Anim = () => {
           <div className="relative w-full flex flex-col overflow-hidden">
             <div className="flex">
               <p className="text-xl truncate font-bold m-4">Court métrage</p>
-              <p className="bg-blue-300 text-white text-xs font-semibold mb-2 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
+              <p className="bg-blue-300 text-white text-xs font-semibold mb-10 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
                 Audio
               </p>
-              <p className="bg-orange-500 text-white text-xs font-semibold mb-2 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
+              <p className="bg-orange-500 text-white text-xs font-semibold mb-10 mx-2 px-2.5 py-0.5 rounded dark:bg-indigo-500 inline-block">
                 Anim
               </p>
             </div>
